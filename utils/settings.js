@@ -7,7 +7,7 @@ const thresholds = {
 const testOptions = {
   somoke: {
     vus: 1,
-    duration: '1m',
+    duration: '10s',
     rps: rps,
     thresholds: thresholds
   },
@@ -47,4 +47,14 @@ const selectedTest = __ENV.TEST || 'smoke';
 
 export function handleOptions() {
   return testOptions.selectedTest
+}
+
+export function handleHeader(token) {
+  let header = {
+    'Content-Type': 'application/json'
+  };
+  if (token) {
+    header['Authorization'] = `Bearer ${token}`;
+  }
+  return header
 }

@@ -1,4 +1,4 @@
-const baseUrl = 'petstore.swagger.io/v2'
+const baseUrl = 'https://petstore.swagger.io/v2'
 
 
 export const endpoints = {
@@ -17,7 +17,5 @@ export const endpoints = {
     user: {
         create: `${baseUrl}/user`,
         findUpdDel: (name) => `${baseUrl}/user/${name}`,
-        update: (name) => `${baseUrl}/user/${name}`,
-        delete: (name) => `${baseUrl}/user/${name}`,
     },
 }
